@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type AdditionalPackageDocumentDataSlicesSlice =
+  | ContentBSlice
   | ContentASlice
   | ContentNameSlice
   | CoverageDSlice
@@ -185,6 +186,63 @@ export type DisclaimerDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Item in *Header → Links*
+ */
+export interface HeaderDocumentDataLinksItem {
+  /**
+   * Label field in *Header → Links*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.links[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * Link field in *Header → Links*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.links[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Content for Header documents
+ */
+interface HeaderDocumentData {
+  /**
+   * Links field in *Header*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.links[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  links: prismic.GroupField<Simplify<HeaderDocumentDataLinksItem>>;
+}
+
+/**
+ * Header document from Prismic
+ *
+ * - **API ID**: `header`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type HeaderDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<HeaderDocumentData>,
+    "header",
+    Lang
+  >;
+
 type HomePageDocumentDataSlicesSlice = never;
 
 /**
@@ -288,6 +346,7 @@ export type AllDocumentTypes =
   | AdditionalPackageDocument
   | ArticleDocument
   | DisclaimerDocument
+  | HeaderDocument
   | HomePageDocument
   | ReviewsDocument;
 
@@ -334,6 +393,88 @@ type ContentASliceVariation = ContentASliceDefault;
 export type ContentASlice = prismic.SharedSlice<
   "content_a",
   ContentASliceVariation
+>;
+
+/**
+ * Item in *ContentB → Default → Primary → Additional informations*
+ */
+export interface ContentBSliceDefaultPrimaryAdditionalInformationsItem {
+  /**
+   * Number field in *ContentB → Default → Primary → Additional informations*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_b.default.primary.additional_informations[].number
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  number: prismic.NumberField;
+
+  /**
+   * Text field in *ContentB → Default → Primary → Additional informations*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_b.default.primary.additional_informations[].text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *ContentB → Default → Primary*
+ */
+export interface ContentBSliceDefaultPrimary {
+  /**
+   * Additional informations field in *ContentB → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_b.default.primary.additional_informations[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  additional_informations: prismic.GroupField<
+    Simplify<ContentBSliceDefaultPrimaryAdditionalInformationsItem>
+  >;
+
+  /**
+   * Frame field in *ContentB → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_b.default.primary.frame
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  frame: prismic.RichTextField;
+}
+
+/**
+ * Default variation for ContentB Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContentBSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ContentBSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ContentB*
+ */
+type ContentBSliceVariation = ContentBSliceDefault;
+
+/**
+ * ContentB Shared Slice
+ *
+ * - **API ID**: `content_b`
+ * - **Description**: ContentB
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContentBSlice = prismic.SharedSlice<
+  "content_b",
+  ContentBSliceVariation
 >;
 
 /**
@@ -807,6 +948,9 @@ declare module "@prismicio/client" {
       DisclaimerDocument,
       DisclaimerDocumentData,
       DisclaimerDocumentDataSlicesSlice,
+      HeaderDocument,
+      HeaderDocumentData,
+      HeaderDocumentDataLinksItem,
       HomePageDocument,
       HomePageDocumentData,
       HomePageDocumentDataSlicesSlice,
@@ -818,6 +962,11 @@ declare module "@prismicio/client" {
       ContentASliceDefaultPrimary,
       ContentASliceVariation,
       ContentASliceDefault,
+      ContentBSlice,
+      ContentBSliceDefaultPrimaryAdditionalInformationsItem,
+      ContentBSliceDefaultPrimary,
+      ContentBSliceVariation,
+      ContentBSliceDefault,
       ContentNameSlice,
       ContentNameSliceDefaultPrimary,
       ContentNameSliceVariation,

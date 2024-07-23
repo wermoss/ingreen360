@@ -1,0 +1,52 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"additional_informations": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"number",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "98",
+									"type": "Number"
+								}
+							],
+							[
+								"text",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Anim deserunt aute labore ut fugiat culpa adipisicing elit Lorem veniam ex consequat deserunt non. Velit irure incididunt irure ex ut est ipsum do mollit dolore exercitation laborum. Culpa voluptate excepteur enim."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			},
+			"frame": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "In ad culpa cillum duis. Irure deserunt non laboris excepteur elit culpa esse cupidatat tempor nostrud veniam."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
