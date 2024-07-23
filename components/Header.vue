@@ -1,5 +1,5 @@
 <template>
-  <section class="py-10">
+  <section class="py-10 absolute w-full">
     <div class="container mx-auto flex justify-between items-center">
       <div class="">Ubezpiecz Moją Teslę</div>
       <div class="flex flex-row gap-8 items-center">

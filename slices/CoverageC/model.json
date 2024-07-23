@@ -1,0 +1,42 @@
+{
+  "id": "coverage_c",
+  "type": "SharedSlice",
+  "name": "CoverageC",
+  "description": "CoverageC",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "coverage": {
+          "type": "Text",
+          "config": {
+            "label": "Coverage",
+            "placeholder": ""
+          }
+        },
+        "variants": {
+          "type": "Group",
+          "config": {
+            "label": "Variants",
+            "repeat": true,
+            "fields": {
+              "variant": {
+                "type": "Text",
+                "config": {
+                  "label": "Variant",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

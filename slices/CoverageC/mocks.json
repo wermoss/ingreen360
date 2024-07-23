@@ -1,0 +1,45 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"coverage": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Limit kilometrów"
+			},
+			"variants": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"variant",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "10.000"
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"variant",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "20.000"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

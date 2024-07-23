@@ -1,0 +1,25 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"coverage": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Przedmiot ubezpieczenia"
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Do aliqua est culpa aliqua cupidatat irure et sint deserunt minim dolor aliqua. Culpa Lorem duis aute enim non laborum fugiat cupidatat voluptate excepteur non eu commodo. Eiusmod laboris irure velit veniam laborum ad ea dolore laborum pariatur elit reprehenderit esse veniam magna."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

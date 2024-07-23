@@ -1,0 +1,25 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "fierce",
+				"type": "Text"
+			},
+			"disclaimer": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Consectetur deserunt sint adipisicing aliqua esse consectetur excepteur deserunt nostrud. Aute tempor Lorem sunt."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
