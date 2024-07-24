@@ -1,0 +1,115 @@
+{
+  "format": "custom",
+  "id": "company",
+  "label": "Company",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "monochrome_logo": {
+        "type": "Image",
+        "config": {
+          "label": "Monochrome Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "colorful_logo": {
+        "type": "Image",
+        "config": {
+          "label": "Colorful Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "company_name": {
+        "type": "Text",
+        "config": {
+          "label": "Company Name",
+          "placeholder": ""
+        }
+      },
+      "address": {
+        "type": "Text",
+        "config": {
+          "label": "Address",
+          "placeholder": ""
+        }
+      },
+      "postcode": {
+        "type": "Text",
+        "config": {
+          "label": "Postcode",
+          "placeholder": ""
+        }
+      },
+      "town": {
+        "type": "Text",
+        "config": {
+          "label": "Town",
+          "placeholder": ""
+        }
+      },
+      "telephone_number": {
+        "type": "Text",
+        "config": {
+          "label": "Telephone Number",
+          "placeholder": ""
+        }
+      },
+      "email_address": {
+        "type": "Text",
+        "config": {
+          "label": "Email Address",
+          "placeholder": ""
+        }
+      },
+      "first_company_branch": {
+        "type": "Text",
+        "config": {
+          "label": "First Company Branch",
+          "placeholder": ""
+        }
+      },
+      "fcb_telephone_numbers": {
+        "type": "Group",
+        "config": {
+          "label": "FCB Telephone Numbers",
+          "repeat": true,
+          "fields": {
+            "fcb_telephone_number": {
+              "type": "Text",
+              "config": {
+                "label": "FCB Telephone Number",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "second_company_branch": {
+        "type": "Text",
+        "config": {
+          "label": "Second Company Branch",
+          "placeholder": ""
+        }
+      },
+      "scb_telephone_numbers": {
+        "type": "Group",
+        "config": {
+          "label": "SCB Telephone Numbers",
+          "repeat": true,
+          "fields": {
+            "scb_telephone_number": {
+              "type": "Text",
+              "config": {
+                "label": "SCB Telephone Number",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

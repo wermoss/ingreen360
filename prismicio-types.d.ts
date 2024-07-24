@@ -152,6 +152,193 @@ export type ArticleDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Item in *Company → FCB Telephone Numbers*
+ */
+export interface CompanyDocumentDataFcbTelephoneNumbersItem {
+  /**
+   * FCB Telephone Number field in *Company → FCB Telephone Numbers*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.fcb_telephone_numbers[].fcb_telephone_number
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  fcb_telephone_number: prismic.KeyTextField;
+}
+
+/**
+ * Item in *Company → SCB Telephone Numbers*
+ */
+export interface CompanyDocumentDataScbTelephoneNumbersItem {
+  /**
+   * SCB Telephone Number field in *Company → SCB Telephone Numbers*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.scb_telephone_numbers[].scb_telephone_number
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  scb_telephone_number: prismic.KeyTextField;
+}
+
+/**
+ * Content for Company documents
+ */
+interface CompanyDocumentData {
+  /**
+   * Monochrome Logo field in *Company*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.monochrome_logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  monochrome_logo: prismic.ImageField<never>;
+
+  /**
+   * Colorful Logo field in *Company*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.colorful_logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  colorful_logo: prismic.ImageField<never>;
+
+  /**
+   * Company Name field in *Company*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.company_name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_name: prismic.KeyTextField;
+
+  /**
+   * Address field in *Company*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.address
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  address: prismic.KeyTextField;
+
+  /**
+   * Postcode field in *Company*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.postcode
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  postcode: prismic.KeyTextField;
+
+  /**
+   * Town field in *Company*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.town
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  town: prismic.KeyTextField;
+
+  /**
+   * Telephone Number field in *Company*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.telephone_number
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  telephone_number: prismic.KeyTextField;
+
+  /**
+   * Email Address field in *Company*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.email_address
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email_address: prismic.KeyTextField;
+
+  /**
+   * First Company Branch field in *Company*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.first_company_branch
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  first_company_branch: prismic.KeyTextField;
+
+  /**
+   * FCB Telephone Numbers field in *Company*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.fcb_telephone_numbers[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  fcb_telephone_numbers: prismic.GroupField<
+    Simplify<CompanyDocumentDataFcbTelephoneNumbersItem>
+  >;
+
+  /**
+   * Second Company Branch field in *Company*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.second_company_branch
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  second_company_branch: prismic.KeyTextField;
+
+  /**
+   * SCB Telephone Numbers field in *Company*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: company.scb_telephone_numbers[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  scb_telephone_numbers: prismic.GroupField<
+    Simplify<CompanyDocumentDataScbTelephoneNumbersItem>
+  >;
+}
+
+/**
+ * Company document from Prismic
+ *
+ * - **API ID**: `company`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type CompanyDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<CompanyDocumentData>,
+    "company",
+    Lang
+  >;
+
 type DisclaimerDocumentDataSlicesSlice = DisclaimerSlice;
 
 /**
@@ -183,6 +370,38 @@ export type DisclaimerDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<
     Simplify<DisclaimerDocumentData>,
     "disclaimer",
+    Lang
+  >;
+
+/**
+ * Content for Footer documents
+ */
+interface FooterDocumentData {
+  /**
+   * Company Name field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.company_name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_name: prismic.KeyTextField;
+}
+
+/**
+ * Footer document from Prismic
+ *
+ * - **API ID**: `footer`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FooterDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<FooterDocumentData>,
+    "footer",
     Lang
   >;
 
@@ -345,7 +564,9 @@ export type ReviewsDocument<Lang extends string = string> =
 export type AllDocumentTypes =
   | AdditionalPackageDocument
   | ArticleDocument
+  | CompanyDocument
   | DisclaimerDocument
+  | FooterDocument
   | HeaderDocument
   | HomePageDocument
   | ReviewsDocument;
@@ -945,9 +1166,15 @@ declare module "@prismicio/client" {
       ArticleDocument,
       ArticleDocumentData,
       ArticleDocumentDataSlicesSlice,
+      CompanyDocument,
+      CompanyDocumentData,
+      CompanyDocumentDataFcbTelephoneNumbersItem,
+      CompanyDocumentDataScbTelephoneNumbersItem,
       DisclaimerDocument,
       DisclaimerDocumentData,
       DisclaimerDocumentDataSlicesSlice,
+      FooterDocument,
+      FooterDocumentData,
       HeaderDocument,
       HeaderDocumentData,
       HeaderDocumentDataLinksItem,

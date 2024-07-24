@@ -17,7 +17,7 @@ defineProps(
     "index",
     "slices",
     "context",
-  ])
+  ]),
 );
 </script>
 
@@ -26,7 +26,7 @@ defineProps(
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
   >
-    <div class="container mx-auto px-6 my-10">
+    <div class="container mx-auto my-10 px-6">
       <PrismicRichText
         :field="slice.primary.content"
         :serializer="serializer"

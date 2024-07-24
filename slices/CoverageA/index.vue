@@ -23,7 +23,7 @@ defineProps(
     "index",
     "slices",
     "context",
-  ])
+  ]),
 );
 </script>
 
@@ -32,16 +32,16 @@ defineProps(
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
   >
-    <div class="container mx-auto max-w-8xl">
+    <div class="max-w-8xl container mx-auto">
       <div
-        class="grid lg:grid-cols-3 lg:bg-white lg:p-10 gap-4 my-4 rounded mx-6 text-[13px] lg:text-[16px] tracking-wide"
+        class="mx-6 my-4 grid gap-4 rounded text-[13px] tracking-wide lg:grid-cols-3 lg:bg-white lg:p-10 lg:text-[16px]"
       >
         <div class="flex items-center">
-          <div class="w-2 h-2 bg-[#18A56B] mr-4 lg:hidden"></div>
+          <div class="mr-4 h-2 w-2 bg-[#18A56B] lg:hidden"></div>
           <div>{{ slice.primary.coverage }}</div>
         </div>
 
-        <div class="col-span-2 p-6 lg:p-0 bg-white">
+        <div class="col-span-2 bg-white p-6 lg:p-0">
           <PrismicRichText
             :field="slice.primary.description"
             :serializer="serializer"

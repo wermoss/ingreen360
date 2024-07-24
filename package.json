@@ -18,6 +18,8 @@
   "devDependencies": {
     "@nuxtjs/prismic": "^3.3.2",
     "@slicemachine/adapter-nuxt": "^0.3.42",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.5",
     "slice-machine-ui": "^2.2.1"
   }
 }
