@@ -34,10 +34,14 @@ defineProps(
   >
     <div class="container mx-auto max-w-8xl">
       <div
-        class="grid lg:grid-cols-3 bg-white p-10 gap-4 my-2 rounded mx-6 text-[13px] lg:text-[16px] tracking-wide"
+        class="grid lg:grid-cols-3 lg:bg-white lg:p-10 gap-4 my-4 rounded mx-6 text-[13px] lg:text-[16px] tracking-wide"
       >
-        <div>{{ slice.primary.coverage }}</div>
-        <div class="col-span-2">
+        <div class="flex items-center">
+          <div class="w-2 h-2 bg-[#18A56B] mr-4 lg:hidden"></div>
+          <div>{{ slice.primary.coverage }}</div>
+        </div>
+
+        <div class="col-span-2 p-6 bg-white">
           <PrismicRichText
             :field="slice.primary.description"
             :serializer="serializer"

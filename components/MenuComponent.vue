@@ -1,30 +1,15 @@
 <template>
-  <div class="w-[500px] bg-gray-200 fixed left-0 top-0 h-screen menu-animation">
+  <div
+    class="w-[450px] bg-white fixed left-0 top-0 h-screen p-10 menu-animation shadow-xl"
+  >
     <div
       v-for="item in menuItems"
       :key="item.link.id"
-      class="text-lg font-normal pl-8 tracking-widest"
+      class="text-lg font-normal pl-8 tracking-wides text-[16px]"
     >
-      <a
-        v-if="item.link.link_type === 'Web'"
-        :href="item.link.url"
-        target="_blank"
-        rel="noopener noreferrer"
-        @click="toggleMenu"
-        :class="{ 'text-green-500': item.link.url === currentPath }"
-      >
+      <PrismicLink :field="item.link" @click="toggleMenu">
         {{ item.label }}
-      </a>
-      <RouterLink
-        v-else
-        :to="`/pakiet/${item.link.uid}`"
-        @click="toggleMenu"
-        :class="{
-          'text-green-500': `/pakiet/${item.link.uid}` === currentPath,
-        }"
-      >
-        {{ item.label }}
-      </RouterLink>
+      </PrismicLink>
     </div>
   </div>
 </template>

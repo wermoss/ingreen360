@@ -7,5 +7,18 @@ export default defineNuxtConfig({
 
   prismic: {
     endpoint: apiEndpoint || repositoryName,
+    preview: "/api/preview",
+    clientConfig: {
+      routes: [
+        {
+          type: "additional_package",
+          path: "/pakiet/:uid",
+        },
+        {
+          type: "article",
+          path: "/artykuly/:uid",
+        },
+      ],
+    },
   },
 });

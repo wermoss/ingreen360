@@ -18,18 +18,21 @@ defineProps(
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
   >
-    <div class="container mx-auto max-w-8xl">
-      <div class="grid lg:grid-cols-2 px-10 gap-4 my-4 rounded mx-6">
+    <div class="container mx-auto max-w-8xl mx-6">
+      <div class="grid lg:grid-cols-2 px-6 gap-4 my-4 rounded">
         <div class="hidden lg:block">
           <!-- Empty content -->
         </div>
         <div class="grid grid-cols-2 text-center gap-4">
           <div
             v-for="item in slice.primary.packages"
-            class="bg-[#16A56B] py-6 rounded-md text-white"
+            :key="item.id"
+            class="bg-[#16A56B] py-4 rounded-md text-white"
           >
-            <p class="text-xs">{{ item.type }}</p>
-            <p class="font-semibold">{{ item.name }}</p>
+            <p class="text-[10px] tracking-widest">{{ item.type }}</p>
+            <p class="font-normal text-[13px] tracking-widest">
+              {{ item.name }}
+            </p>
           </div>
         </div>
       </div>
