@@ -41,7 +41,7 @@ defineProps(
           <div>{{ slice.primary.coverage }}</div>
         </div>
 
-        <div class="col-span-2 p-6 bg-white">
+        <div class="col-span-2 p-6 lg:p-0 bg-white">
           <PrismicRichText
             :field="slice.primary.description"
             :serializer="serializer"
