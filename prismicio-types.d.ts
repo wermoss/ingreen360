@@ -374,19 +374,104 @@ export type DisclaimerDocument<Lang extends string = string> =
   >;
 
 /**
+ * Item in *Footer → First Column*
+ */
+export interface FooterDocumentDataFirstColumnItem {
+  /**
+   * Link field in *Footer → First Column*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.first_column[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+
+  /**
+   * Label field in *Footer → First Column*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.first_column[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+}
+
+/**
+ * Item in *Footer → Second Column*
+ */
+export interface FooterDocumentDataSecondColumnItem {
+  /**
+   * Link field in *Footer → Second Column*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.second_column[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+
+  /**
+   * Label field in *Footer → Second Column*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.second_column[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+}
+
+/**
  * Content for Footer documents
  */
 interface FooterDocumentData {
   /**
-   * Company Name field in *Footer*
+   * First Column Name field in *Footer*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: footer.company_name
+   * - **API ID Path**: footer.first_column_name
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  company_name: prismic.KeyTextField;
+  first_column_name: prismic.KeyTextField;
+
+  /**
+   * First Column field in *Footer*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.first_column[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  first_column: prismic.GroupField<Simplify<FooterDocumentDataFirstColumnItem>>;
+
+  /**
+   * Second Column Name field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.second_column_name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  second_column_name: prismic.KeyTextField;
+
+  /**
+   * Second Column field in *Footer*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.second_column[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  second_column: prismic.GroupField<
+    Simplify<FooterDocumentDataSecondColumnItem>
+  >;
 }
 
 /**
@@ -1175,6 +1260,8 @@ declare module "@prismicio/client" {
       DisclaimerDocumentDataSlicesSlice,
       FooterDocument,
       FooterDocumentData,
+      FooterDocumentDataFirstColumnItem,
+      FooterDocumentDataSecondColumnItem,
       HeaderDocument,
       HeaderDocumentData,
       HeaderDocumentDataLinksItem,

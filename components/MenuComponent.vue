@@ -1,11 +1,12 @@
 <template>
   <div
-    class="w-[450px] bg-white fixed left-0 top-0 h-screen p-10 menu-animation shadow-xl"
+    class="menu-animation fixed left-0 top-0 z-10 h-screen w-[450px] bg-white px-10 pt-6 shadow-xl"
   >
+    <img src="/img/logo.svg" class="pb-10" />
     <div
       v-for="item in menuItems"
       :key="item.link.id"
-      class="text-lg font-normal pl-8 tracking-wides text-[16px]"
+      class="tracking-wides pl-8 text-[16px] font-normal"
     >
       <PrismicLink :field="item.link" @click="toggleMenu">
         {{ item.label }}

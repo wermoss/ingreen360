@@ -7,7 +7,7 @@ import MenuComponent from "./MenuComponent.vue"; // Dodaj ten import
 const route = useRoute();
 const prismic = usePrismic();
 const { data: aaa } = useAsyncData("aaa", () =>
-  prismic.client.getSingle("header")
+  prismic.client.getSingle("header"),
 );
 const isMenuVisible = ref(false);
 
@@ -29,13 +29,15 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="py-6 absolute w-full bg-white">
-    <div class="container mx-auto flex justify-between items-center">
-      <NuxtLink to="/" class="text-[#18a56b]">Ubezpiecz Moją Teslę</NuxtLink>
-      <div class="flex flex-row gap-8 items-center">
+  <section class="absolute w-full bg-white py-6">
+    <div class="container mx-auto flex items-center justify-between px-6">
+      <NuxtLink to="/" class="text-[#18a56b]"
+        ><img src="/img/logo.svg" class="w-[150px] lg:w-[200px]"
+      /></NuxtLink>
+      <div class="flex flex-row items-center gap-8">
         <div @click="toggleMenu" class="z-50">Menu</div>
         <div
-          class="bg-[#18a56b] px-4 py-2 rounded-md text-white border border-white"
+          class="rounded-md bg-[#18a56b] px-4 py-2 text-xs tracking-widest text-white lg:text-sm"
         >
           KONTAKT
         </div>
