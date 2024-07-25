@@ -25,7 +25,7 @@ defineProps(
     "index",
     "slices",
     "context",
-  ])
+  ]),
 );
 </script>
 
@@ -34,8 +34,8 @@ defineProps(
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
   >
-    <div class="container mx-auto px-6 my-10 text-[15px]">
-      <div class="grid lg:grid-cols-2 gap-20">
+    <div class="container mx-auto my-10 px-6 text-[15px]">
+      <div class="grid gap-20 lg:grid-cols-2">
         <div>
           <div class="flex flex-col">
             <div
@@ -53,7 +53,7 @@ defineProps(
           <PrismicRichText
             :field="slice.primary.frame"
             :serializer="serializer"
-            class="bg-gray-200 p-10 rounded-md"
+            class="rounded-md bg-[#00000008] p-10"
           />
         </div>
       </div>

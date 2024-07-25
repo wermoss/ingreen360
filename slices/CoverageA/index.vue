@@ -36,7 +36,7 @@ defineProps(
       <div
         class="mx-6 my-4 grid gap-4 rounded text-[13px] tracking-wide lg:grid-cols-3 lg:bg-white lg:p-10 lg:text-[16px]"
       >
-        <div class="flex items-center">
+        <div class="flex items-start">
           <div class="mr-4 h-2 w-2 bg-[#18A56B] lg:hidden"></div>
           <div>{{ slice.primary.coverage }}</div>
         </div>

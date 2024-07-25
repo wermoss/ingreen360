@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type AdditionalPackageDocumentDataSlicesSlice =
+  | ContentButtonSlice
   | ContentBSlice
   | ContentASlice
   | ContentNameSlice
@@ -784,6 +785,51 @@ export type ContentBSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ContentButton → Default → Primary*
+ */
+export interface ContentButtonSliceDefaultPrimary {
+  /**
+   * Label field in *ContentButton → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_button.default.primary.label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for ContentButton Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContentButtonSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ContentButtonSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ContentButton*
+ */
+type ContentButtonSliceVariation = ContentButtonSliceDefault;
+
+/**
+ * ContentButton Shared Slice
+ *
+ * - **API ID**: `content_button`
+ * - **Description**: ContentButton
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContentButtonSlice = prismic.SharedSlice<
+  "content_button",
+  ContentButtonSliceVariation
+>;
+
+/**
  * Primary content in *ContentName → Default → Primary*
  */
 export interface ContentNameSliceDefaultPrimary {
@@ -1281,6 +1327,10 @@ declare module "@prismicio/client" {
       ContentBSliceDefaultPrimary,
       ContentBSliceVariation,
       ContentBSliceDefault,
+      ContentButtonSlice,
+      ContentButtonSliceDefaultPrimary,
+      ContentButtonSliceVariation,
+      ContentButtonSliceDefault,
       ContentNameSlice,
       ContentNameSliceDefaultPrimary,
       ContentNameSliceVariation,
