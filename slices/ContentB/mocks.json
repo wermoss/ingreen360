@@ -45,6 +45,11 @@
 						}
 					}
 				]
+			},
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "choice",
+				"type": "Text"
 			}
 		},
 		"items": []

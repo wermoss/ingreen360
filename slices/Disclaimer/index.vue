@@ -9,7 +9,7 @@ defineProps(
     "index",
     "slices",
     "context",
-  ])
+  ]),
 );
 </script>
 
@@ -18,7 +18,12 @@ defineProps(
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
   >
-    {{ slice.primary.title }}
-    <PrismicRichText :field="slice.primary.disclaimer" />
+    <div class="container mx-auto flex flex-col items-center justify-center">
+      <p class="mb-4 text-3xl">{{ slice.primary.title }}</p>
+      <PrismicRichText
+        :field="slice.primary.disclaimer"
+        class="text-md leading-7 text-gray-500"
+      />
+    </div>
   </section>
 </template>

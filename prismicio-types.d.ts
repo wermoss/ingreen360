@@ -732,6 +732,16 @@ export interface ContentBSliceDefaultPrimaryAdditionalInformationsItem {
  */
 export interface ContentBSliceDefaultPrimary {
   /**
+   * Title field in *ContentB → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_b.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
    * Additional informations field in *ContentB → Default → Primary*
    *
    * - **Field Type**: Group

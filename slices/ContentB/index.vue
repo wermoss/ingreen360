@@ -38,13 +38,32 @@ defineProps(
       <div class="grid gap-20 lg:grid-cols-2">
         <div>
           <div class="flex flex-col">
+            <div class="">
+              <p
+                class="mb-6 inline-block bg-[#18a56b] px-6 py-2 text-lg tracking-wider text-white"
+              >
+                {{ slice.primary.title }}
+              </p>
+            </div>
+
             <div
               v-for="item in slice.primary.additional_informations"
-              class="flex flex-row"
+              class="mb-3 flex flex-row justify-center"
             >
-              <div class="mr-4">{{ item.number }}</div>
+              <div class="mr-4">
+                <div
+                  class="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-[#00000015] text-sm"
+                >
+                  {{ item.number }}
+                </div>
+              </div>
+
               <div>
-                <PrismicRichText :field="item.text" :serializer="serializer" />
+                <PrismicRichText
+                  :field="item.text"
+                  :serializer="serializer"
+                  class="mt-1"
+                />
               </div>
             </div>
           </div>
