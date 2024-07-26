@@ -17,12 +17,18 @@ defineProps(
   <section
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
+    class="mb-10"
   >
-    {{ slice.primary.title }}
-    <div class="grid md:grid-cols-3">
-      <div v-for="item in slice.primary.reviews">
-        <PrismicImage :field="item.image" />
-        {{ item.description }}
+    <!-- {{ slice.primary.title }} -->
+    <div
+      class="grid items-center justify-center gap-10 text-center md:grid-cols-3"
+    >
+      <div
+        v-for="item in slice.primary.reviews"
+        class="flex flex-col items-center"
+      >
+        <PrismicImage :field="item.image" class="mb-10 h-[80px]" />
+        <p class="text-md">{{ item.description }}</p>
       </div>
     </div>
   </section>
