@@ -48,7 +48,7 @@ defineProps(
 
             <div
               v-for="item in slice.primary.additional_informations"
-              class="mb-3 flex flex-row justify-center"
+              class="mb-3 flex flex-row"
             >
               <div class="mr-4">
                 <div
