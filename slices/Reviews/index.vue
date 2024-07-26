@@ -27,8 +27,8 @@ defineProps(
         v-for="item in slice.primary.reviews"
         class="flex flex-col items-center"
       >
-        <PrismicImage :field="item.image" class="mb-10 h-[80px]" />
-        <p class="text-md">{{ item.description }}</p>
+        <PrismicImage :field="item.image" class="mb-10 h-[50px] lg:h-[80px]" />
+        <p class="lg:text-md px-20 text-sm lg:px-0">{{ item.description }}</p>
       </div>
     </div>
   </section>
