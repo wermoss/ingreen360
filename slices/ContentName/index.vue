@@ -9,7 +9,7 @@ defineProps(
     "index",
     "slices",
     "context",
-  ])
+  ]),
 );
 </script>
 
@@ -18,6 +18,12 @@ defineProps(
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
   >
-    <h1 class="text-3xl font-bold px-6 mb-10">{{ slice.primary.text }}</h1>
+    <div class="container mx-auto px-6">
+      <h1
+        class="mb-10 inline-block rounded-md bg-[#18a56b] px-6 py-2 text-xl tracking-widest text-white"
+      >
+        {{ slice.primary.text }}
+      </h1>
+    </div>
   </section>
 </template>
