@@ -19,7 +19,7 @@ defineProps(
     :data-slice-variation="slice.variation"
   >
     {{ slice.primary.title }}
-    <div class="grid md:grid-cols-2">
+    <div class="grid md:grid-cols-3">
       <div v-for="item in slice.primary.reviews">
         <PrismicImage :field="item.image" />
         {{ item.description }}
