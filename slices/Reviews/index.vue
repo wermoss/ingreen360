@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import { type Content } from "@prismicio/client";
 
 // The array passed to `getSliceComponentProps` is purely optional.
@@ -11,6 +12,10 @@ defineProps(
     "context",
   ]),
 );
+
+const hoveredItem = ref<
+  Content.ReviewsSlice["primary"]["reviews"][number] | null
+>(null);
 </script>
 
 <template>
@@ -25,9 +30,15 @@ defineProps(
     >
       <div
         v-for="item in slice.primary.reviews"
+        :key="item.id"
         class="flex flex-col items-center"
       >
-        <PrismicImage :field="item.image" class="mb-10 h-[50px] lg:h-[80px]" />
+        <PrismicImage
+          :field="hoveredItem === item ? item.image_light : item.image_dark"
+          class="mb-10 h-[50px] transition duration-300 ease-in-out lg:h-[80px]"
+          @mouseover="hoveredItem = item"
+          @mouseleave="hoveredItem = null"
+        />
         <p class="lg:text-md px-20 text-sm lg:px-0">{{ item.description }}</p>
       </div>
     </div>

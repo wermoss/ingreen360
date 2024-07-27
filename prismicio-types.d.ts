@@ -1216,14 +1216,14 @@ export type DisclaimerSlice = prismic.SharedSlice<
  */
 export interface ReviewsSliceDefaultPrimaryReviewsItem {
   /**
-   * Image field in *Reviews → Default → Primary → Reviews*
+   * Image Light field in *Reviews → Default → Primary → Reviews*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: reviews.default.primary.reviews[].image
+   * - **API ID Path**: reviews.default.primary.reviews[].image_light
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  image: prismic.ImageField<never>;
+  image_light: prismic.ImageField<never>;
 
   /**
    * Description field in *Reviews → Default → Primary → Reviews*
@@ -1234,6 +1234,16 @@ export interface ReviewsSliceDefaultPrimaryReviewsItem {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   description: prismic.KeyTextField;
+
+  /**
+   * Image Dark field in *Reviews → Default → Primary → Reviews*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reviews.default.primary.reviews[].image_dark
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_dark: prismic.ImageField<never>;
 }
 
 /**

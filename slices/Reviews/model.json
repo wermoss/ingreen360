@@ -25,10 +25,10 @@
             "label": "Reviews",
             "repeat": true,
             "fields": {
-              "image": {
+              "image_light": {
                 "type": "Image",
                 "config": {
-                  "label": "Image",
+                  "label": "Image Light",
                   "constraint": {},
                   "thumbnails": []
                 }
@@ -38,6 +38,14 @@
                 "config": {
                   "label": "Description",
                   "placeholder": ""
+                }
+              },
+              "image_dark": {
+                "type": "Image",
+                "config": {
+                  "label": "Image Dark",
+                  "constraint": {},
+                  "thumbnails": []
                 }
               }
             }
