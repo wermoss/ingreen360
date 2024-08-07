@@ -9,7 +9,7 @@
       class="tracking-wides pl-8 text-[16px] font-normal"
     >
       <PrismicLink :field="item.link" @click="toggleMenu">
-        {{ item.label }}
+        <p class="py-1">{{ item.label }}</p>
       </PrismicLink>
     </div>
   </div>

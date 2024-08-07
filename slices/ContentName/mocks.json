@@ -7,6 +7,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "impossible",
 				"type": "Text"
+			},
+			"description": {
+				"__TYPE__": "FieldContent",
+				"value": "hall",
+				"type": "Text"
 			}
 		},
 		"items": []

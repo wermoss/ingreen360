@@ -24,6 +24,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "content_broadcrumb": {
+              "type": "SharedSlice"
+            },
+            "content_timeline": {
+              "type": "SharedSlice"
+            },
             "content_button": {
               "type": "SharedSlice"
             },

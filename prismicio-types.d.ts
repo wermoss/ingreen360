@@ -5,6 +5,8 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type AdditionalPackageDocumentDataSlicesSlice =
+  | ContentBroadcrumbSlice
+  | ContentTimelineSlice
   | ContentButtonSlice
   | ContentBSlice
   | ContentASlice
@@ -795,6 +797,36 @@ export type ContentBSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Default variation for ContentBroadcrumb Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContentBroadcrumbSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *ContentBroadcrumb*
+ */
+type ContentBroadcrumbSliceVariation = ContentBroadcrumbSliceDefault;
+
+/**
+ * ContentBroadcrumb Shared Slice
+ *
+ * - **API ID**: `content_broadcrumb`
+ * - **Description**: ContentBroadcrumb
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContentBroadcrumbSlice = prismic.SharedSlice<
+  "content_broadcrumb",
+  ContentBroadcrumbSliceVariation
+>;
+
+/**
  * Primary content in *ContentButton → Default → Primary*
  */
 export interface ContentButtonSliceDefaultPrimary {
@@ -807,6 +839,26 @@ export interface ContentButtonSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   label: prismic.KeyTextField;
+
+  /**
+   * Text field in *ContentButton → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_button.default.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text: prismic.KeyTextField;
+
+  /**
+   * Link field in *ContentButton → Default → Primary*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_button.default.primary.link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkToMediaField;
 }
 
 /**
@@ -852,6 +904,16 @@ export interface ContentNameSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   text: prismic.KeyTextField;
+
+  /**
+   * Description field in *ContentName → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_name.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
 }
 
 /**
@@ -882,6 +944,68 @@ type ContentNameSliceVariation = ContentNameSliceDefault;
 export type ContentNameSlice = prismic.SharedSlice<
   "content_name",
   ContentNameSliceVariation
+>;
+
+/**
+ * Item in *ContentTimeline → Default → Primary → Steps*
+ */
+export interface ContentTimelineSliceDefaultPrimaryStepsItem {
+  /**
+   * Step field in *ContentTimeline → Default → Primary → Steps*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_timeline.default.primary.steps[].step
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  step: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *ContentTimeline → Default → Primary*
+ */
+export interface ContentTimelineSliceDefaultPrimary {
+  /**
+   * Steps field in *ContentTimeline → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_timeline.default.primary.steps[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  steps: prismic.GroupField<
+    Simplify<ContentTimelineSliceDefaultPrimaryStepsItem>
+  >;
+}
+
+/**
+ * Default variation for ContentTimeline Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContentTimelineSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ContentTimelineSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ContentTimeline*
+ */
+type ContentTimelineSliceVariation = ContentTimelineSliceDefault;
+
+/**
+ * ContentTimeline Shared Slice
+ *
+ * - **API ID**: `content_timeline`
+ * - **Description**: ContentTimeline
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContentTimelineSlice = prismic.SharedSlice<
+  "content_timeline",
+  ContentTimelineSliceVariation
 >;
 
 /**
@@ -1347,6 +1471,9 @@ declare module "@prismicio/client" {
       ContentBSliceDefaultPrimary,
       ContentBSliceVariation,
       ContentBSliceDefault,
+      ContentBroadcrumbSlice,
+      ContentBroadcrumbSliceVariation,
+      ContentBroadcrumbSliceDefault,
       ContentButtonSlice,
       ContentButtonSliceDefaultPrimary,
       ContentButtonSliceVariation,
@@ -1355,6 +1482,11 @@ declare module "@prismicio/client" {
       ContentNameSliceDefaultPrimary,
       ContentNameSliceVariation,
       ContentNameSliceDefault,
+      ContentTimelineSlice,
+      ContentTimelineSliceDefaultPrimaryStepsItem,
+      ContentTimelineSliceDefaultPrimary,
+      ContentTimelineSliceVariation,
+      ContentTimelineSliceDefault,
       CoverageASlice,
       CoverageASliceDefaultPrimary,
       CoverageASliceVariation,

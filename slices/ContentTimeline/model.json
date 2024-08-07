@@ -1,0 +1,35 @@
+{
+  "id": "content_timeline",
+  "type": "SharedSlice",
+  "name": "ContentTimeline",
+  "description": "ContentTimeline",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "steps": {
+          "type": "Group",
+          "config": {
+            "label": "Steps",
+            "repeat": true,
+            "fields": {
+              "step": {
+                "type": "Text",
+                "config": {
+                  "label": "Step",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
